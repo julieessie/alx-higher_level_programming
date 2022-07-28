@@ -1,0 +1,34 @@
+3-say_my_name module
+++++++++++++++++++++++
+
+use of 3-say_my_name
+That prints first and last name
+
+++++++++++++++++++++++++++++
+
+Import Module:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+++++++++++++++++++++++++++++
+
+Always check for firstname and lastname are strings
+
+>>> say_my_name("Jack", "Sparrow")
+    My name is Jack Sparrow
+
+++++++++++++++++++++++++++++++++++++
+otherwise  type error ia raised
++++++++++++++++++++++++++++++++++
+
+::
+
+Check for TypeError
+>>> try:
+...	name(1, "Jack")
+first_name must be a string
+>>> try:
+...	name("Sparrow", 2)
+
+last_name must be a string
+>>>
++++++++++++++++++++++++++++++++++++
