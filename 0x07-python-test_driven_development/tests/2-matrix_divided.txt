@@ -18,23 +18,23 @@ Import module
 
 test for division by zero
 >>> try:
-... ([[6, 9, 12], [15, 18, 21]], 0)
-... except Exception as e:
-... print(e)
+
+>>> matrix =[[6, 9, 12], [15, 18, 21]]
+... print(matrix_divided(matrix, 0))
 division by zero
 
 test for wrong data type for div
+
 >>> try:
-...  ([[6, 9, 12], [15, 18, 21]], 'bye')
-... except Exception as e:
-... print(e)
+>>> matrix =[[6, 9, 12], [15, 18, 21]]
+... print(matrix_divided(matrix, 'bye'))
 division must be a number
 
 test for diff data type from integer
 >>> try:
-... ([[6, 9, 12], [15, 'num', 21]], 2)
-... except Exception as e:
-... print(e)
+>>> matrix =[[6, 9, 12], [15, 'num', 21]]
+... print(matrix_divided(matrix, 2)) 
+
 matrix must be a matrix (list of lists) of integers/floats
 >>>
 +++++++++++++++++++++++=====

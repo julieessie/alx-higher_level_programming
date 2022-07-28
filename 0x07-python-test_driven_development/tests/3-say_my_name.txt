@@ -23,12 +23,16 @@ otherwise  type error ia raised
 ::
 
 Check for TypeError
->>> try:
-...	name(1, "Jack")
-first_name must be a string
->>> try:
-...	name("Sparrow", 2)
 
-last_name must be a string
+>>> try:
+>>> say_my_name(1, "Sparrow")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> try:
+>>> say_my_name("Jack, 2)
+Traceback (most recent call last):
+
+TypeError: last_name must be a string
 >>>
 +++++++++++++++++++++++++++++++++++

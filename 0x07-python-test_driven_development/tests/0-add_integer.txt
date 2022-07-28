@@ -22,11 +22,11 @@ works for float
 
 works on negative float:
 >>> add_integer(-2.9, -0.2)
--2
+-3.1
 
 works on both negative and positives
 >>> add_integer(-2.9, 2)
--0,9
+-0.9
 
 works on floats and integers
 >>add_integer(3.0, 6)
