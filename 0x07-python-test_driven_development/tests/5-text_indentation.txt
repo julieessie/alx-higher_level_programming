@@ -1,0 +1,127 @@
+``5-text_indentation`` module doctest
+==============================================================================================
+
+Use ``text_indentation``
+print a text with 2 new lines after each of these characters: '.', '?', ':'
+______________________________________________________________________________________________
+
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+check no delim:
+    >>> text_indentation("Good Morning")
+        Good Morning
+
+check string with spaces:
+    >>> text_indentation("Morning         ")
+        Morning
+
+check string with spaces 2:
+    >>> text_indentation("        Morning")
+        Morning
+
+check string with spaces 3:
+    >>> text_indentation("        Morning          ")
+        Morning
+
+check string with empty string:
+    >>> text_indentation("")
+
+check string with empty string 2:
+    >>> text_indentation("      ")
+
+check simple:
+    >>> text_indentation("Good: Morning")
+        Good:
+	<BLANKLINE>
+	Morning
+
+check delims with spaces:
+    >>> text_indentation("      ?:  :  ")
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+check newline:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+check newline 2:
+    >>> text_indentation("\n\n")
+    <BLANKLINE>
+    <BLANKLINE>
+
+check newline 3:
+    >>> text_indentation("Good\n\n")
+        Good
+	<BLANKLINE>
+
+check all delimeters:
+    >>> text_indentation("Good: Morning? Bramwel.")
+        Good:
+	<BLANKLINE>
+	Morning?
+        <BLANKLINE>
+	Bramwel.
+
+
+check all delimeters with spaces:
+    >>> text_indentation("Good   :     Morning    ?    Bramwel.    bye")
+    Good:                                                                             <BLANKLINE>                                                                       Morning?                                                                          <BLANKLINE>                                                                       Bramwel.                                                                          <BLANKLINE>                                                                       bye
+check all delimeters with spaces at end:
+    >>> text_indentation("Good   :     Morning    ?    Bramwel.    bye     ")
+    Good:
+    <BLANKLINE>
+    Morning?
+    <BLANKLINE>
+    Bramwel.
+    <BLANKLINE>
+    bye
+
+check just delimeters:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+check just delimeters 2:
+    >>> text_indentation("     ?   ")
+    ?
+    <BLANKLINE>
+
+check nonindent inside indent
+    >>> text_indentation("?Good.")
+    ?
+    <BLANKLINE>
+    Good.
+    <BLANKLINE>
+check existing newlines:
+    >>> text_indentation("?\n\n.\n\n:")
+    ?
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+     :
+     <BLANKLINE>
+
+check none:
+    >>> text_indentation(None)
+        Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+check number:
+    >>> text_indentation(33)
+        Traceback (most recent call last):
+	...
+	TypeError: text must be a string
