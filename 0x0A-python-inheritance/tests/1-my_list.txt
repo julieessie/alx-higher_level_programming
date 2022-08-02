@@ -50,4 +50,3 @@ test it:
     >>> new_l = MyList()
 
     >>> new_l.print_sorted()
-        []
